@@ -61,7 +61,7 @@
         throw new Error(message);
       }
       form.reset();
-      showStatus("Your request was accepted by the email service and routed to " + recipient + ". First-time use may require the recipient to confirm FormSubmit's activation email. For urgent enquiries, contact the team directly at " + recipient + ".", false);
+      showStatus("Sent + ".", false);
     } catch (error) {
       console.error("Tech-Yeti form submission error:", error);
       const network = error instanceof TypeError;
