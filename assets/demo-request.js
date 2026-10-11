@@ -20,7 +20,7 @@
       return false;
     }
     const requirements = document.getElementById("requirements");
-    if (requirements && requirements.value.trim().length < 10) {
+    if (requirements && requirements.value.trim().length < 1) {
       requirements.focus();
       showStatus("Please describe what you want to improve in at least 10 characters.", true);
       return false;
