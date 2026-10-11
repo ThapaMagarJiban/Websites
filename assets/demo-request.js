@@ -13,6 +13,7 @@
     status.classList.toggle("error", Boolean(isError));
     status.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "nearest" });
   }
+
   function validateForm() {
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -22,7 +23,7 @@
     const requirements = document.getElementById("requirements");
     if (requirements && requirements.value.trim().length < 1) {
       requirements.focus();
-      showStatus("Please describe what you want to improve in at least 10 characters.", true);
+      showStatus("Please describe what you want to improve in at least 1 characters.", true);
       return false;
     }
     return true;
@@ -61,7 +62,8 @@
         throw new Error(message);
       }
       form.reset();
-      showStatus("Sent + ".", false);
+      // यहाँ सानो त्रुटि थियो, यसलाई सुधार्दै सफल सन्देश राखिएको छ:
+      showStatus("Your request has been sent successfully!", false);
     } catch (error) {
       console.error("Tech-Yeti form submission error:", error);
       const network = error instanceof TypeError;
