@@ -31,9 +31,7 @@
         aria-label="Open navigation"
         class="menu-button"
         data-menu-button
-        type="button">
-        ☰
-      </button>
+        type="button">☰</button>
 
       <nav aria-label="Main navigation" class="nav" data-nav id="primary-navigation">
         <a href="index.html">Home</a>
@@ -69,18 +67,16 @@
             id="demoRequestForm"
             method="POST">
 
-            <!-- FormSubmit configuration -->
             <input name="_subject" type="hidden" value="Tech-Yeti demo request"/>
             <input name="_template" type="hidden" value="table"/>
             <input name="_next" type="hidden" value="https://thapamagarjiban.github.io/contact.html"/>
 
             <div class="form-grid">
 
-              <!-- Company name: letters and spaces only -->
+              <!-- Company: letters and spaces only -->
               <div class="field full">
                 <label for="company">
-                  Company / organisation
-                  <span aria-hidden="true">*</span>
+                  Company / organisation <span aria-hidden="true">*</span>
                 </label>
 
                 <input
@@ -95,7 +91,7 @@
                   aria-describedby="companyHelp"/>
 
                 <p class="field-note" id="companyHelp">
-                  Use letters and spaces only, for example: ABC Company.
+                  Use letters and spaces only, for example ABC Company.
                   Numbers and symbols are not allowed.
                 </p>
               </div>
@@ -103,8 +99,7 @@
               <!-- Contact name -->
               <div class="field">
                 <label for="name">
-                  Contact name
-                  <span aria-hidden="true">*</span>
+                  Contact name <span aria-hidden="true">*</span>
                 </label>
 
                 <input
@@ -113,10 +108,10 @@
                   maxlength="120"
                   name="name"
                   pattern="(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ' -]+"
+                  title="Use letters, spaces, hyphens and apostrophes only."
                   placeholder="e.g., Bipin Paija"
                   required
-                  aria-describedby="nameHelp"
-                  title="Use letters, spaces, hyphens and apostrophes only."/>
+                  aria-describedby="nameHelp"/>
 
                 <p class="field-note" id="nameHelp">
                   Use letters only. Spaces, hyphens and apostrophes are allowed;
@@ -124,11 +119,10 @@
                 </p>
               </div>
 
-              <!-- Email -->
+              <!-- Email: lowercase letters and numbers, @ and dots -->
               <div class="field">
                 <label for="email">
-                  Work email
-                  <span aria-hidden="true">*</span>
+                  Work email <span aria-hidden="true">*</span>
                 </label>
 
                 <input
@@ -136,13 +130,17 @@
                   id="email"
                   maxlength="254"
                   name="email"
-                  placeholder="name@company.com"
+                  placeholder="name@gmail.com"
+                  pattern="[a-z0-9]+(\.[a-z0-9]+)*@[a-z0-9]+(\.[a-z0-9]+)+"
+                  title="Use lowercase letters and numbers, with @ and dots only, for example name@gmail.com. Capital letters and other symbols are not allowed."
                   required
                   type="email"
                   aria-describedby="emailHelp"/>
 
                 <p class="field-note" id="emailHelp">
-                  Enter a valid email address so we can reply to your enquiry.
+                  Use lowercase letters and numbers. The @ symbol and dots
+                  are allowed, for example name@gmail.com. Other symbols are
+                  not allowed.
                 </p>
               </div>
 
@@ -201,7 +199,7 @@
                 </select>
               </div>
 
-              <!-- Product or service -->
+              <!-- Requested product or service -->
               <div class="field full">
                 <label for="requestedDemo">
                   Which product or service would you like to see?
@@ -212,39 +210,32 @@
                   <option disabled selected value="">
                     Choose a product or service…
                   </option>
-
                   <option value="Zero Incident Safety Training Simulator — first product demo">
                     Zero Incident Safety Training Simulator — first product demo
                   </option>
-
                   <option value="Tech-Yeti company portfolio and services walkthrough">
                     Tech-Yeti company portfolio and services walkthrough
                   </option>
-
                   <option value="Web / application development discussion">
                     Web / application development discussion
                   </option>
-
                   <option value="UI/UX and interactive 3D discussion">
                     UI/UX and interactive 3D discussion
                   </option>
-
                   <option value="Backend and data systems discussion">
                     Backend and data systems discussion
                   </option>
-
                   <option value="QA, testing and security discussion">
                     QA, testing and security discussion
                   </option>
-
                   <option value="Other / custom project discussion">
                     Other / custom project discussion
                   </option>
                 </select>
 
                 <p class="field-note">
-                  Zero Incident is Tech-Yeti’s first product. Other options
-                  are service/portfolio discussions, not separate existing products.
+                  Zero Incident is Tech-Yeti’s first product. Other options are
+                  service/portfolio discussions, not separate existing products.
                 </p>
               </div>
 
@@ -265,12 +256,12 @@
                   rows="4"></textarea>
 
                 <p class="field-note">
-                  Please describe the problem, goal or features you would
-                  like us to discuss. This field cannot be left blank.
+                  Please describe the problem, goal or features you would like
+                  us to discuss. This field cannot be left blank.
                 </p>
               </div>
 
-              <!-- Preferred date and time calendar -->
+              <!-- Calendar and time picker -->
               <div class="field full">
                 <label for="preferredTime">
                   Preferred demo date and time (Nepal Time, NPT) (optional)
@@ -319,9 +310,8 @@
                 </label>
 
                 <p class="field-note">
-                  Your information is sent to our form-delivery provider
-                  and forwarded to Tech-Yeti for the purpose of responding
-                  to this request.
+                  Your information is sent to our form-delivery provider and
+                  forwarded to Tech-Yeti for the purpose of responding to this request.
                 </p>
               </div>
 
@@ -335,7 +325,6 @@
                   tabindex="-1"
                   type="text"/>
               </div>
-
             </div>
 
             <button class="btn btn-primary" id="demoSubmit" type="submit">
@@ -348,8 +337,7 @@
               class="notice"
               hidden
               id="demoStatus"
-              role="status">
-            </div>
+              role="status"></div>
           </form>
         </div>
       </div>
@@ -364,7 +352,6 @@
             <span class="brand-mark">
               <img alt="" height="48" src="assets/techyeti-logo-mark.png" width="48"/>
             </span>
-
             <span class="brand-copy">
               Tech-Yeti
               <small>Software Solutions</small>
@@ -397,9 +384,7 @@
 
       <div class="footer-bottom">
         <span>
-          &copy;
-          <span data-year></span>
-          Tech-Yeti Software Solutions
+          &copy; <span data-year></span> Tech-Yeti Software Solutions
         </span>
         <span>CET257 Enterprise Project</span>
       </div>
