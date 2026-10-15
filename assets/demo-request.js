@@ -6,15 +6,56 @@
 
   const status = document.getElementById("demoStatus");
   const button = document.getElementById("demoSubmit");
-  const preferredTimeInput = document.getElementById("preferredTime");
+
   const companyInput = document.getElementById("company");
   const nameInput = document.getElementById("name");
+  const emailInput = document.getElementById("email");
   const phoneInput = document.getElementById("phone");
+  const preferredTimeInput = document.getElementById("preferredTime");
 
-  const recipient = "bi95ny@student.sunderland.ac.uk";
+  const recipient = "bi95ny@student.sunderland.ac.uk" + "pkit25b.bpn@ismt.edu.np" + "pkit24a.jbn@ismt.edu.np";
   const endpoint = "https://formsubmit.co/ajax/" + recipient;
 
-  // Get the current date and time in Nepal Time (NPT).
+  // Company name: letters and spaces only.
+  if (companyInput) {
+    companyInput.addEventListener("input", function () {
+      companyInput.value = companyInput.value
+        .replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]/g, "")
+        .replace(/\s+/g, " ")
+        .replace(/^ /, "");
+    });
+  }
+
+  // Contact name: letters, spaces, hyphens and apostrophes only.
+  if (nameInput) {
+    nameInput.addEventListener("input", function () {
+      nameInput.value = nameInput.value.replace(
+        /[^A-Za-zÀ-ÖØ-öø-ÿ' -]/g,
+        ""
+      );
+    });
+  }
+
+  // Email: lowercase letters and numbers, with @ and dots only.
+  // Uppercase input becomes lowercase; other symbols are removed.
+  if (emailInput) {
+    emailInput.addEventListener("input", function () {
+      emailInput.value = emailInput.value
+        .toLowerCase()
+        .replace(/[^a-z0-9.@]/g, "");
+    });
+  }
+
+  // Phone: digits only; preserve leading zeroes.
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function () {
+      phoneInput.value = phoneInput.value
+        .replace(/\D/g, "")
+        .slice(0, 15);
+    });
+  }
+
+  // Get current date and time in Nepal Time (NPT).
   function getNepalDateTimeLocal(date = new Date()) {
     const parts = new Intl.DateTimeFormat("en-CA", {
       timeZone: "Asia/Kathmandu",
@@ -43,7 +84,7 @@
     );
   }
 
-  // Prevent past demo dates and times.
+  // Stop visitors from choosing past demo dates or times.
   function updatePreferredTimeMinimum() {
     if (!preferredTimeInput) return;
 
@@ -76,44 +117,10 @@
     );
   }
 
-  // Company name: letters and spaces only.
-  // Automatically remove numbers and symbols.
-  if (companyInput) {
-    companyInput.addEventListener("input", function () {
-      companyInput.value = companyInput.value
-        .replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]/g, "")
-        .replace(/\s+/g, " ")
-        .replace(/^ /, "");
-    });
-  }
-
-  // Contact name: letters, spaces, hyphens and apostrophes.
-  if (nameInput) {
-    nameInput.addEventListener("input", function () {
-      nameInput.value = nameInput.value.replace(
-        /[^A-Za-zÀ-ÖØ-öø-ÿ' -]/g,
-        ""
-      );
-    });
-  }
-
-  // Phone: digits only; preserve leading zeroes.
-  if (phoneInput) {
-    phoneInput.addEventListener("input", function () {
-      phoneInput.value = phoneInput.value
-        .replace(/\D/g, "")
-        .slice(0, 15);
-    });
-  }
-
   function showStatus(message, isError) {
     status.textContent = message;
     status.hidden = false;
-
-    status.classList.toggle(
-      "error",
-      Boolean(isError)
-    );
+    status.classList.toggle("error", Boolean(isError));
 
     status.scrollIntoView({
       behavior: window.matchMedia(
@@ -124,7 +131,6 @@
   }
 
   function validateForm() {
-    // Refresh the minimum date/time before validating.
     updatePreferredTimeMinimum();
 
     if (!form.checkValidity()) {
@@ -198,7 +204,6 @@
       });
 
       const raw = await response.text();
-
       let result = {};
 
       try {
@@ -222,8 +227,6 @@
       }
 
       form.reset();
-
-      // Restore the minimum after resetting the form.
       updatePreferredTimeMinimum();
 
       showStatus(
