@@ -19,7 +19,7 @@
 
   // Additional recipients: CC
   const additionalRecipients = [
-    "pkjt25b.bpn@ismt.edu.np",
+    "pkit25b.bpn@ismt.edu.np",
     "pkit24a.jbn@ismt.edu.np"
   ].join(",");
 
