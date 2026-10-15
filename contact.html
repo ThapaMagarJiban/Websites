@@ -70,7 +70,7 @@
        <!-- FormSubmit Configuration Fields -->
        <input name="_subject" type="hidden" value="Tech-Yeti demo request"/>
        <input name="_template" type="hidden" value="table"/>
-       <input name="_next" type="hidden" value="https://thapamagarjiban.github.io/Tech-Yeti/contact.html"/>
+       <input name="_next" type="hidden" value="https://thapamagarjiban.github.io/contact.html"/>
 
        <div class="form-grid">
         <div class="field full">
@@ -80,7 +80,8 @@
            *
           </span>
          </label>
-         <input autocomplete="organization" id="company" maxlength="150" name="company" placeholder="e.g., AutoParts Logistics Ltd." required=""/>
+         <input autocomplete="organization" id="company" maxlength="150" name="company" placeholder="e.g., AutoParts Logistics Ltd." required="" aria-describedby="companyHelp"/>
+         <p class="field-note" id="companyHelp">Enter the organisation name; numbers and common company-name punctuation are allowed.</p>
         </div>
         <div class="field">
          <label for="name">
@@ -89,7 +90,8 @@
            *
           </span>
          </label>
-         <input autocomplete="name" id="name" maxlength="120" name="name" placeholder="Full name" required=""/>
+         <input autocomplete="name" id="name" maxlength="120" name="name" placeholder="e.g., Bipin Paija" required="" aria-describedby="nameHelp"/>
+         <p class="field-note" id="nameHelp">Use letters only. Spaces, hyphens and apostrophes are allowed; numbers are not.</p>
         </div>
         <div class="field">
          <label for="email">
@@ -98,13 +100,15 @@
            *
           </span>
          </label>
-         <input autocomplete="email" id="email" maxlength="254" name="email" placeholder="name@company.com" required="" type="email"/>
+         <input autocomplete="email" id="email" maxlength="254" name="email" placeholder="name@company.com" required="" type="email" aria-describedby="emailHelp"/>
+         <p class="field-note" id="emailHelp">Enter a valid email address so we can reply to your enquiry.</p>
         </div>
         <div class="field">
          <label for="phone">
           Phone (optional)
          </label>
-         <input autocomplete="tel" id="phone" maxlength="40" name="phone" placeholder="+977 ..." type="tel"/>
+         <input autocomplete="tel" inputmode="numeric" id="phone" maxlength="15" minlength="7" name="phone" pattern="[0-9]{7,15}" placeholder="Digits only (7–15 digits)" title="Enter 7 to 15 digits only. Do not use +, spaces, letters or decimal points." type="tel" aria-describedby="phoneHelp"/>
+         <p class="field-note" id="phoneHelp">Optional. Digits only (7–15 digits); no letters, symbols, spaces or decimals.</p>
         </div>
         <div class="field">
          <label for="industry">
@@ -214,7 +218,7 @@
          </label>
          <textarea id="requirements" maxlength="3000" minlength="1" name="requirements" placeholder="e.g., forklift/pedestrian separation awareness, loading bay hazards, PPE compliance" required="" rows="4"></textarea>
          <p class="field-note">
-          Please share the problem, goal or features you would like us to discuss (at least 1 characters).
+          Please describe the problem, goal or features you would like us to discuss. This field cannot be left blank.
          </p>
         </div>
         <div class="field full">
