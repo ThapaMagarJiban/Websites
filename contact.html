@@ -1,336 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <meta content="Request a  product prototype or discuss a Tech-Yeti software service or project." name="description"/>
-  <title>
-   Request a Demo | Tech-Yeti Software Solutions
-  </title>
+  <meta content="Request a product prototype or discuss a Tech-Yeti software service or project." name="description"/>
+  <title>Request a Demo | Tech-Yeti Software Solutions</title>
   <meta content="#101a2c" name="theme-color"/>
   <link href="assets/techyeti-logo-mark.png" rel="icon" type="image/png"/>
   <link href="assets/style.css" rel="stylesheet"/>
- </head>
- <body>
-  <a class="skip" href="#main">
-   Skip to content
-  </a>
-  <header class="site-header">
-   <div class="container nav-inner">
-    <a aria-label="Tech-Yeti Software Solutions home" class="brand" href="index.html">
-     <span class="brand-mark">
-      <img alt="" height="48" src="assets/techyeti-logo-mark.png" width="48"/>
-     </span>
-     <span class="brand-copy">
-      Tech-Yeti
-      <small>
-       Software Solutions
-      </small>
-     </span>
-    </a>
-    <button aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation" class="menu-button" data-menu-button="" type="button">
-     ☰
-    </button>
-    <nav aria-label="Main navigation" class="nav" data-nav="" id="primary-navigation">
-     <a href="index.html">
-      Home
-     </a>
-     <a href="about.html">
-      About Us
-     </a>
-     <a href="services.html">
-      Services
-     </a>
-     <a href="products.html">
-      Products
-     </a>
-     <a href="team.html">
-      Team Portfolio
-     </a>
-     <a aria-current="page" class="active nav-cta" href="contact.html">
-      Request a Demo
-     </a>
-    </nav>
-   </div>
-  </header>
-  <main id="main">
-   <section class="section">
-    <div class="container">
-     <div class="form-card contact-form-wide">
-      <span class="eyebrow">
-       Demo request form
-      </span>
-      <h2 class="panel-heading">
-       Request a product demo or service discussion
-      </h2>
-      <p class="muted form-intro">
-       Complete the form and our team will receive your request by email after the recipient email has been activated with our form-delivery service.
-      </p>
-      <form action="https://formsubmit.co/bi95ny@student.sunderland.ac.uk" id="demoRequestForm" method="POST">
-       <!-- FormSubmit Configuration Fields -->
-       <input name="_subject" type="hidden" value="Tech-Yeti demo request"/>
-       <input name="_template" type="hidden" value="table"/>
-       <input name="_next" type="hidden" value="https://thapamagarjiban.github.io/contact.html"/>
+</head>
 
-       <div class="form-grid">
-        <div class="field full">
-         <label for="company">
-          Company / organisation
-          <span aria-hidden="true">
-           *
-          </span>
-         </label>
-         <input autocomplete="organization" id="company" maxlength="150" name="company" placeholder="e.g., AutoParts Logistics Ltd." required="" aria-describedby="companyHelp"/>
-         <p class="field-note" id="companyHelp">Enter the organisation name; numbers and common company-name punctuation are allowed.</p>
-        </div>
-        <div class="field">
-         <label for="name">
-          Contact name
-          <span aria-hidden="true">
-           *
-          </span>
-         </label>
-         <input autocomplete="name" id="name" maxlength="120" name="name" placeholder="e.g., Bipin Paija" required="" aria-describedby="nameHelp"/>
-         <p class="field-note" id="nameHelp">Use letters only. Spaces, hyphens and apostrophes are allowed; numbers are not.</p>
-        </div>
-        <div class="field">
-         <label for="email">
-          Work email
-          <span aria-hidden="true">
-           *
-          </span>
-         </label>
-         <input autocomplete="email" id="email" maxlength="254" name="email" placeholder="name@company.com" required="" type="email" aria-describedby="emailHelp"/>
-         <p class="field-note" id="emailHelp">Enter a valid email address so we can reply to your enquiry.</p>
-        </div>
-        <div class="field">
-         <label for="phone">
-          Phone (optional)
-         </label>
-         <input autocomplete="tel" inputmode="numeric" id="phone" maxlength="15" minlength="7" name="phone" pattern="[0-9]{7,15}" placeholder="Digits only (7–15 digits)" title="Enter 7 to 15 digits only. Do not use +, spaces, letters or decimal points." type="tel" aria-describedby="phoneHelp"/>
-         <p class="field-note" id="phoneHelp">Optional. Digits only (7–15 digits); no letters, symbols, spaces or decimals.</p>
-        </div>
-        <div class="field">
-         <label for="industry">
-          Industry
-         </label>
-         <select id="industry" name="industry">
-          <option value="">
-           Select industry&hellip;
-          </option>
-          <option>
-           Logistics &amp; warehousing
-          </option>
-          <option>
-           Automotive
-          </option>
-          <option>
-           Manufacturing
-          </option>
-          <option>
-           Education
-          </option>
-          <option>
-           Healthcare
-          </option>
-          <option>
-           Retail &amp; distribution
-          </option>
-          <option>
-           Technology / software
-          </option>
-          <option>
-           Construction
-          </option>
-          <option>
-           Other
-          </option>
-         </select>
-        </div>
-        <div class="field full">
-         <label for="organisationSize">
-          Organisation size
-         </label>
-         <select id="organisationSize" name="organisationSize">
-          <option value="">
-           Select organisation size&hellip;
-          </option>
-          <option>
-           1&ndash;10 employees
-          </option>
-          <option>
-           11&ndash;50 employees
-          </option>
-          <option>
-           51&ndash;200 employees
-          </option>
-          <option>
-           201&ndash;1,000 employees
-          </option>
-          <option>
-           More than 1,000 employees
-          </option>
-         </select>
-        </div>
-        <div class="field full">
-         <label for="requestedDemo">
-          Which product or service would you like to see?
-          <span aria-hidden="true">
-           *
-          </span>
-         </label>
-         <select id="requestedDemo" name="requestedDemo" required="">
-          <option disabled="" selected="" value="">
-           Choose a product or service&hellip;
-          </option>
-          <option value="Zero Incident Safety Training Simulator &mdash; first product demo">
-           Zero Incident Safety Training Simulator &mdash; first product demo
-          </option>
-          <option value="Tech-Yeti company portfolio and services walkthrough">
-           Tech-Yeti company portfolio and services walkthrough
-          </option>
-          <option value="Web / application development discussion">
-           Web / application development discussion
-          </option>
-          <option value="UI/UX and interactive 3D discussion">
-           UI/UX and interactive 3D discussion
-          </option>
-          <option value="Backend and data systems discussion">
-           Backend and data systems discussion
-          </option>
-          <option value="QA, testing and security discussion">
-           QA, testing and security discussion
-          </option>
-          <option value="Other / custom project discussion">
-           Other / custom project discussion
-          </option>
-         </select>
-         <p class="field-note">
-          Zero Incident is Tech-Yeti&rsquo;s first product. Other options are service/portfolio discussions, not separate existing products.
-         </p>
-        </div>
-        <div class="field full">
-         <label for="requirements">
-          What would you like to improve?
-          <span aria-hidden="true">
-           *
-          </span>
-         </label>
-         <textarea id="requirements" maxlength="3000" minlength="1" name="requirements" placeholder="e.g., forklift/pedestrian separation awareness, loading bay hazards, PPE compliance" required="" rows="4"></textarea>
-         <p class="field-note">
-          Please describe the problem, goal or features you would like us to discuss. This field cannot be left blank.
-         </p>
-        </div>
-        <div class="field full">
-         <label for="preferredTime">
-          Preferred demo time (optional)
-         </label>
-         <input id="preferredTime" maxlength="160" name="preferredTime" placeholder="e.g., Next week, mornings (NPT)"/>
-        </div>
-        <div class="field full">
-         <label for="notes">
-          Notes (optional)
-         </label>
-         <textarea id="notes" maxlength="2000" name="notes" placeholder="Anything else the team should know?" rows="3"></textarea>
-        </div>
-        <div class="field full consent-field">
-         <label class="consent-label">
-          <input id="consent" name="consent" required="" type="checkbox" value="I agree that Tech-Yeti may use these details to respond to my enquiry."/>
-          <span>
-           I agree that Tech-Yeti may use these details to respond to my enquiry.
-           <span aria-hidden="true">
-            *
-           </span>
-          </span>
-         </label>
-         <p class="field-note">
-          Your information is sent to our form-delivery provider and forwarded to Tech-Yeti for the purpose of responding to this request.
-         </p>
-        </div>
-        <div aria-hidden="true" class="honeypot-field">
-         <label for="_honey">
-          Leave this field empty
-         </label>
-         <input autocomplete="off" id="_honey" name="_honey" tabindex="-1" type="text"/>
-        </div>
-       </div>
-       <button class="btn btn-primary" id="demoSubmit" type="submit">
-        Request a Demo
-        <span aria-hidden="true">
-         &rarr;
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a aria-label="Tech-Yeti Software Solutions home" class="brand" href="index.html">
+        <span class="brand-mark">
+          <img alt="" height="48" src="assets/techyeti-logo-mark.png" width="48"/>
         </span>
-       </button>
-       <div aria-live="polite" class="notice" hidden="" id="demoStatus" role="status">
-       </div>
-      </form>
-     </div>
+        <span class="brand-copy">
+          Tech-Yeti
+          <small>Software Solutions</small>
+        </span>
+      </a>
+
+      <button
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+        aria-label="Open navigation"
+        class="menu-button"
+        data-menu-button
+        type="button">
+        ☰
+      </button>
+
+      <nav aria-label="Main navigation" class="nav" data-nav id="primary-navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="team.html">Team Portfolio</a>
+        <a aria-current="page" class="active nav-cta" href="contact.html">
+          Request a Demo
+        </a>
+      </nav>
     </div>
-   </section>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container">
+        <div class="form-card contact-form-wide">
+          <span class="eyebrow">Demo request form</span>
+
+          <h2 class="panel-heading">
+            Request a product demo or service discussion
+          </h2>
+
+          <p class="muted form-intro">
+            Complete the form and our team will receive your request by
+            email after the recipient email has been activated with our
+            form-delivery service.
+          </p>
+
+          <form
+            action="https://formsubmit.co/bi95ny@student.sunderland.ac.uk"
+            id="demoRequestForm"
+            method="POST">
+
+            <!-- FormSubmit configuration -->
+            <input name="_subject" type="hidden" value="Tech-Yeti demo request"/>
+            <input name="_template" type="hidden" value="table"/>
+            <input name="_next" type="hidden" value="https://thapamagarjiban.github.io/contact.html"/>
+
+            <div class="form-grid">
+
+              <!-- Company name: letters and spaces only -->
+              <div class="field full">
+                <label for="company">
+                  Company / organisation
+                  <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                  autocomplete="organization"
+                  id="company"
+                  maxlength="150"
+                  name="company"
+                  pattern="(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ ]+"
+                  title="Use letters and spaces only. Numbers and symbols are not allowed."
+                  placeholder="e.g., ABC Company"
+                  required
+                  aria-describedby="companyHelp"/>
+
+                <p class="field-note" id="companyHelp">
+                  Use letters and spaces only, for example: ABC Company.
+                  Numbers and symbols are not allowed.
+                </p>
+              </div>
+
+              <!-- Contact name -->
+              <div class="field">
+                <label for="name">
+                  Contact name
+                  <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                  autocomplete="name"
+                  id="name"
+                  maxlength="120"
+                  name="name"
+                  pattern="(?=.*[A-Za-zÀ-ÖØ-öø-ÿ])[A-Za-zÀ-ÖØ-öø-ÿ' -]+"
+                  placeholder="e.g., Bipin Paija"
+                  required
+                  aria-describedby="nameHelp"
+                  title="Use letters, spaces, hyphens and apostrophes only."/>
+
+                <p class="field-note" id="nameHelp">
+                  Use letters only. Spaces, hyphens and apostrophes are allowed;
+                  numbers are not.
+                </p>
+              </div>
+
+              <!-- Email -->
+              <div class="field">
+                <label for="email">
+                  Work email
+                  <span aria-hidden="true">*</span>
+                </label>
+
+                <input
+                  autocomplete="email"
+                  id="email"
+                  maxlength="254"
+                  name="email"
+                  placeholder="name@company.com"
+                  required
+                  type="email"
+                  aria-describedby="emailHelp"/>
+
+                <p class="field-note" id="emailHelp">
+                  Enter a valid email address so we can reply to your enquiry.
+                </p>
+              </div>
+
+              <!-- Phone: digits only -->
+              <div class="field">
+                <label for="phone">Phone (optional)</label>
+
+                <input
+                  autocomplete="tel"
+                  inputmode="numeric"
+                  id="phone"
+                  maxlength="15"
+                  minlength="7"
+                  name="phone"
+                  pattern="[0-9]{7,15}"
+                  placeholder="Digits only (7–15 digits)"
+                  title="Enter 7 to 15 digits only. Do not use +, spaces, letters or decimal points."
+                  type="tel"
+                  aria-describedby="phoneHelp"/>
+
+                <p class="field-note" id="phoneHelp">
+                  Optional. Digits only (7–15 digits); no letters, symbols,
+                  spaces or decimals.
+                </p>
+              </div>
+
+              <!-- Industry -->
+              <div class="field">
+                <label for="industry">Industry</label>
+
+                <select id="industry" name="industry">
+                  <option value="">Select industry…</option>
+                  <option>Logistics &amp; warehousing</option>
+                  <option>Automotive</option>
+                  <option>Manufacturing</option>
+                  <option>Education</option>
+                  <option>Healthcare</option>
+                  <option>Retail &amp; distribution</option>
+                  <option>Technology / software</option>
+                  <option>Construction</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <!-- Organisation size -->
+              <div class="field full">
+                <label for="organisationSize">Organisation size</label>
+
+                <select id="organisationSize" name="organisationSize">
+                  <option value="">Select organisation size…</option>
+                  <option>1–10 employees</option>
+                  <option>11–50 employees</option>
+                  <option>51–200 employees</option>
+                  <option>201–1,000 employees</option>
+                  <option>More than 1,000 employees</option>
+                </select>
+              </div>
+
+              <!-- Product or service -->
+              <div class="field full">
+                <label for="requestedDemo">
+                  Which product or service would you like to see?
+                  <span aria-hidden="true">*</span>
+                </label>
+
+                <select id="requestedDemo" name="requestedDemo" required>
+                  <option disabled selected value="">
+                    Choose a product or service…
+                  </option>
+
+                  <option value="Zero Incident Safety Training Simulator — first product demo">
+                    Zero Incident Safety Training Simulator — first product demo
+                  </option>
+
+                  <option value="Tech-Yeti company portfolio and services walkthrough">
+                    Tech-Yeti company portfolio and services walkthrough
+                  </option>
+
+                  <option value="Web / application development discussion">
+                    Web / application development discussion
+                  </option>
+
+                  <option value="UI/UX and interactive 3D discussion">
+                    UI/UX and interactive 3D discussion
+                  </option>
+
+                  <option value="Backend and data systems discussion">
+                    Backend and data systems discussion
+                  </option>
+
+                  <option value="QA, testing and security discussion">
+                    QA, testing and security discussion
+                  </option>
+
+                  <option value="Other / custom project discussion">
+                    Other / custom project discussion
+                  </option>
+                </select>
+
+                <p class="field-note">
+                  Zero Incident is Tech-Yeti’s first product. Other options
+                  are service/portfolio discussions, not separate existing products.
+                </p>
+              </div>
+
+              <!-- Requirements -->
+              <div class="field full">
+                <label for="requirements">
+                  What would you like to improve?
+                  <span aria-hidden="true">*</span>
+                </label>
+
+                <textarea
+                  id="requirements"
+                  maxlength="3000"
+                  minlength="1"
+                  name="requirements"
+                  placeholder="e.g., forklift/pedestrian separation awareness, loading bay hazards, PPE compliance"
+                  required
+                  rows="4"></textarea>
+
+                <p class="field-note">
+                  Please describe the problem, goal or features you would
+                  like us to discuss. This field cannot be left blank.
+                </p>
+              </div>
+
+              <!-- Preferred date and time calendar -->
+              <div class="field full">
+                <label for="preferredTime">
+                  Preferred demo date and time (Nepal Time, NPT) (optional)
+                </label>
+
+                <input
+                  aria-describedby="preferredTimeHelp"
+                  id="preferredTime"
+                  name="preferredTime"
+                  type="datetime-local"
+                  step="60"/>
+
+                <p class="field-note" id="preferredTimeHelp">
+                  Choose a date from the calendar and a time in Nepal Time (NPT).
+                  Past dates and times are not accepted.
+                </p>
+              </div>
+
+              <!-- Notes -->
+              <div class="field full">
+                <label for="notes">Notes (optional)</label>
+
+                <textarea
+                  id="notes"
+                  maxlength="2000"
+                  name="notes"
+                  placeholder="Anything else the team should know?"
+                  rows="3"></textarea>
+              </div>
+
+              <!-- Consent -->
+              <div class="field full consent-field">
+                <label class="consent-label">
+                  <input
+                    id="consent"
+                    name="consent"
+                    required
+                    type="checkbox"
+                    value="I agree that Tech-Yeti may use these details to respond to my enquiry."/>
+
+                  <span>
+                    I agree that Tech-Yeti may use these details to respond
+                    to my enquiry.
+                    <span aria-hidden="true">*</span>
+                  </span>
+                </label>
+
+                <p class="field-note">
+                  Your information is sent to our form-delivery provider
+                  and forwarded to Tech-Yeti for the purpose of responding
+                  to this request.
+                </p>
+              </div>
+
+              <!-- Spam protection: leave empty -->
+              <div aria-hidden="true" class="honeypot-field">
+                <label for="_honey">Leave this field empty</label>
+                <input
+                  autocomplete="off"
+                  id="_honey"
+                  name="_honey"
+                  tabindex="-1"
+                  type="text"/>
+              </div>
+
+            </div>
+
+            <button class="btn btn-primary" id="demoSubmit" type="submit">
+              Request a Demo
+              <span aria-hidden="true">&rarr;</span>
+            </button>
+
+            <div
+              aria-live="polite"
+              class="notice"
+              hidden
+              id="demoStatus"
+              role="status">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
+
   <footer class="footer">
-   <div class="container">
-    <div class="footer-grid">
-     <div>
-      <a class="brand" href="index.html">
-       <span class="brand-mark">
-        <img alt="" height="48" src="assets/techyeti-logo-mark.png" width="48"/>
-       </span>
-       <span class="brand-copy">
-        Tech-Yeti
-        <small>
-         Software Solutions
-        </small>
-       </span>
-      </a>
-      <p>
-       Tech-Yeti is a multidisciplinary software team focused on practical digital solutions. Zero Incident Safety Training Simulator is our first product.
-      </p>
-     </div>
-     <div class="footer-links">
-      <div class="footer-title">
-       Company
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark">
+              <img alt="" height="48" src="assets/techyeti-logo-mark.png" width="48"/>
+            </span>
+
+            <span class="brand-copy">
+              Tech-Yeti
+              <small>Software Solutions</small>
+            </span>
+          </a>
+
+          <p>
+            Tech-Yeti is a multidisciplinary software team focused on
+            practical digital solutions. Zero Incident Safety Training
+            Simulator is our first product.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-title">Company</div>
+          <a href="about.html">About Us</a>
+          <a href="services.html">Services</a>
+          <a href="team.html">Team portfolios</a>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-title">Product &amp; contact</div>
+          <a href="products.html">Zero Incident</a>
+          <a href="contact.html">Request a demo</a>
+          <a href="mailto:bi95ny@student.sunderland.ac.uk">
+            bi95ny@student.sunderland.ac.uk
+          </a>
+        </div>
       </div>
-      <a href="about.html">
-       About Us
-      </a>
-      <a href="services.html">
-       Services
-      </a>
-      <a href="team.html">
-       Team portfolios
-      </a>
-     </div>
-     <div class="footer-links">
-      <div class="footer-title">
-       Product &amp; contact
+
+      <div class="footer-bottom">
+        <span>
+          &copy;
+          <span data-year></span>
+          Tech-Yeti Software Solutions
+        </span>
+        <span>CET257 Enterprise Project</span>
       </div>
-      <a href="products.html">
-       Zero Incident
-      </a>
-      <a href="contact.html">
-       Request a demo
-      </a>
-      <a href="mailto:bi95ny@student.sunderland.ac.uk">
-       bi95ny@student.sunderland.ac.uk
-      </a>
-     </div>
     </div>
-    <div class="footer-bottom">
-     <span>
-      &copy;
-      <span data-year="">
-      </span>
-      Tech-Yeti Software Solutions
-     </span>
-     <span>
-      CET257 Enterprise Project
-     </span>
-    </div>
-   </div>
   </footer>
-  <script defer="True" src="assets/site.js">
-  </script>
-  <script defer="True" src="assets/demo-request.js">
-  </script>
- </body>
+
+  <script defer src="assets/site.js"></script>
+  <script defer src="assets/demo-request.js"></script>
+</body>
 </html>
