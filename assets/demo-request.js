@@ -11,12 +11,28 @@
   const nameInput = document.getElementById("name");
   const emailInput = document.getElementById("email");
   const phoneInput = document.getElementById("phone");
-  const preferredTimeInput = document.getElementById("preferredTime");
+  const preferredTimeInput =
+    document.getElementById("preferredTime");
 
-  const recipient = "bi95ny@student.sunderland.ac.uk" + "pkit25b.bpn@ismt.edu.np" + "pkit24a.jbn@ismt.edu.np";
-  const endpoint = "https://formsubmit.co/ajax/" + recipient;
+  // Primary recipient
+  const recipient = "bi95ny@student.sunderland.ac.uk";
 
-  // Company name: letters and spaces only.
+  // Additional recipients: CC
+  const additionalRecipients = [
+    "pkjt25b.bpn@ismt.edu.np",
+    "pkit24a.jbn@ismt.edu.np"
+  ].join(",");
+
+  // FormSubmit AJAX endpoint
+  const endpoint =
+    "https://formsubmit.co/ajax/" + recipient;
+
+
+  // ==========================================
+  // 1. COMPANY NAME VALIDATION
+  // Letters and spaces only
+  // ==========================================
+
   if (companyInput) {
     companyInput.addEventListener("input", function () {
       companyInput.value = companyInput.value
@@ -26,7 +42,12 @@
     });
   }
 
-  // Contact name: letters, spaces, hyphens and apostrophes only.
+
+  // ==========================================
+  // 2. CONTACT NAME VALIDATION
+  // Letters, spaces, hyphens and apostrophes
+  // ==========================================
+
   if (nameInput) {
     nameInput.addEventListener("input", function () {
       nameInput.value = nameInput.value.replace(
@@ -36,8 +57,13 @@
     });
   }
 
-  // Email: lowercase letters and numbers, with @ and dots only.
-  // Uppercase input becomes lowercase; other symbols are removed.
+
+  // ==========================================
+  // 3. EMAIL VALIDATION
+  // Convert uppercase to lowercase
+  // Remove unsupported symbols
+  // ==========================================
+
   if (emailInput) {
     emailInput.addEventListener("input", function () {
       emailInput.value = emailInput.value
@@ -46,7 +72,13 @@
     });
   }
 
-  // Phone: digits only; preserve leading zeroes.
+
+  // ==========================================
+  // 4. PHONE VALIDATION
+  // Digits only; preserve leading zeroes
+  // Maximum 15 digits
+  // ==========================================
+
   if (phoneInput) {
     phoneInput.addEventListener("input", function () {
       phoneInput.value = phoneInput.value
@@ -55,7 +87,11 @@
     });
   }
 
-  // Get current date and time in Nepal Time (NPT).
+
+  // ==========================================
+  // 5. NEPAL TIME (NPT) DATE AND TIME
+  // ==========================================
+
   function getNepalDateTimeLocal(date = new Date()) {
     const parts = new Intl.DateTimeFormat("en-CA", {
       timeZone: "Asia/Kathmandu",
@@ -84,11 +120,13 @@
     );
   }
 
-  // Stop visitors from choosing past demo dates or times.
+
+  // Prevent selecting a past demo date or time.
   function updatePreferredTimeMinimum() {
     if (!preferredTimeInput) return;
 
     const minimum = getNepalDateTimeLocal();
+
     preferredTimeInput.min = minimum;
 
     if (
@@ -102,6 +140,7 @@
       preferredTimeInput.setCustomValidity("");
     }
   }
+
 
   if (preferredTimeInput) {
     updatePreferredTimeMinimum();
@@ -117,18 +156,34 @@
     );
   }
 
+
+  // ==========================================
+  // 6. DISPLAY SUCCESS AND ERROR MESSAGES
+  // ==========================================
+
   function showStatus(message, isError) {
     status.textContent = message;
     status.hidden = false;
-    status.classList.toggle("error", Boolean(isError));
+
+    status.classList.toggle(
+      "error",
+      Boolean(isError)
+    );
 
     status.scrollIntoView({
       behavior: window.matchMedia(
         "(prefers-reduced-motion: reduce)"
-      ).matches ? "auto" : "smooth",
+      ).matches
+        ? "auto"
+        : "smooth",
       block: "nearest"
     });
   }
+
+
+  // ==========================================
+  // 7. VALIDATE THE FORM BEFORE SUBMISSION
+  // ==========================================
 
   function validateForm() {
     updatePreferredTimeMinimum();
@@ -164,6 +219,11 @@
     return true;
   }
 
+
+  // ==========================================
+  // 8. SUBMIT THE FORM USING FORMSUBMIT
+  // ==========================================
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -173,7 +233,7 @@
 
     if (!validateForm()) return;
 
-    const original = button.textContent;
+    const originalButtonText = button.textContent;
 
     button.disabled = true;
     button.textContent = "Sending request…";
@@ -185,33 +245,53 @@
       payload[key] = String(value).trim();
     }
 
+
+    // Email subject
     payload._subject =
       "Tech-Yeti demo request — " +
       (payload.requestedDemo || "New enquiry");
 
+    // FormSubmit email template
     payload._template = "table";
+
+    // Reply to the customer's email
     payload._replyto = payload.email || "";
+
+    // Send copies to both additional recipients
+    payload._cc = additionalRecipients;
+
+    // Include the URL where the request was submitted
     payload._url = window.location.href;
+
 
     try {
       const response = await fetch(endpoint, {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
+
         body: JSON.stringify(payload)
       });
 
+
+      // Read the FormSubmit response
       const raw = await response.text();
+
       let result = {};
 
       try {
         result = raw ? JSON.parse(raw) : {};
       } catch (_) {
-        result = { message: raw };
+        result = {
+          message: raw
+        };
       }
 
+
+      // Confirm that the service accepted the request
       const accepted =
         result.success === true ||
         result.success === "true";
@@ -226,7 +306,10 @@
         throw new Error(message);
       }
 
+
+      // Reset form after the service accepts the request
       form.reset();
+
       updatePreferredTimeMinimum();
 
       showStatus(
@@ -243,7 +326,7 @@
       const network = error instanceof TypeError;
 
       const message = network
-        ? "The email service could not be reached. Check your internet connection and make sure you are viewing the deployed HTTPS website, then try again."
+        ? "The email service could not be reached. Check your internet connection and try again."
         : (
             error && error.message
               ? error.message
@@ -261,7 +344,8 @@
 
     } finally {
       button.disabled = false;
-      button.textContent = original;
+      button.textContent = originalButtonText;
     }
   });
+
 })();
